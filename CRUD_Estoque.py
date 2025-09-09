@@ -9,3 +9,7 @@ while True:
         exibir_estoque()
     elif escolha == "2":
         adicionar_produto()
+    elif escolha == "3":
+        atualizar_produto()
+    elif escolha == "4":
+        apagar_produto()

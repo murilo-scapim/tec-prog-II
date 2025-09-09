@@ -40,3 +40,37 @@ def adicionar_produto():
                    "quantidade": quantidade}
         estoque.append(produto)
         print("Produto adicionado com sucesso!")
+
+def atualizar_produto():
+    if estoque:
+        descricao = input("Digite a descrição do produto: ")
+
+        produto_encontrado = buscar_produto(descricao)
+
+        if produto_encontrado:
+            nova_descricao = input("Digite a nova descrição: ")
+            novo_preco_unitario = float(input("Digite o novo preço unitário: "))
+            nova_quantidade = int(input("Digite a nova quantidade: "))
+
+            produto_encontrado["descricao"] = nova_descricao
+            produto_encontrado["preco_unitario"] = novo_preco_unitario
+            produto_encontrado["quantidade"] = nova_quantidade
+
+            print("Produto atualizado com sucesso!")
+        else:
+            print("Produto não encontrado!")
+    else:
+        print("Estoque está vazio!")
+
+def apagar_produto():
+    if estoque:
+        descricao = input("Digite a descrição do produto: ")
+        produto_encontrado = buscar_produto(descricao)
+
+        if produto_encontrado:
+            estoque.remove(produto_encontrado)
+            print("Produto apagado com sucesso!")
+        else:
+            print("Produto não existe!")
+    else:
+        print("O estoque está vazio!")
