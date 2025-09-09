@@ -74,3 +74,5 @@ def apagar_produto():
             print("Produto não existe!")
     else:
         print("O estoque está vazio!")
+
+# Implementar a função para realizar entrada de estoque
